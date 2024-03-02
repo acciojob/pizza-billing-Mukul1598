@@ -7,7 +7,6 @@ public class DeluxePizza extends Pizza {
         // your code goes here
         super.addExtraCheese();
         super.addExtraToppings();
-
     }
     @Override
     public void addExtraCheese() {
@@ -18,5 +17,4 @@ public class DeluxePizza extends Pizza {
     public void addExtraToppings() {
 //        super.addExtraToppings();
     }
-
 }
