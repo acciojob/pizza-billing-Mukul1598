@@ -6,6 +6,10 @@ public class Pizza {
     private boolean isCheeseAdded = false;
     private boolean isToppingsAdded = false;
     private boolean isBagAdded = false;
+    private int extraCheese = 80;
+    private int extraVegToppings = 70;
+    private int extraNonVegToppings = 120;
+    private int carryBag = 20;
 
 
     public Pizza(Boolean isVeg){
@@ -26,42 +30,41 @@ public class Pizza {
     public void addExtraCheese(){
         // your code goes here
         isCheeseAdded = true;
-        this.price = this.price + 80;
+        this.price = this.price + extraCheese;
     }
 
     public void addExtraToppings(){
         // your code goes here
         isToppingsAdded = true;
         if(isVeg){
-            this.price = this.price + 70;
+            this.price = this.price + extraVegToppings;
             } else {
-            this.price = this.price + 120;
+            this.price = this.price + extraNonVegToppings;
         }
     }
 
     public void addTakeaway(){
         // your code goes here
         isBagAdded = true;
-        this.price = this.price + 20;
+        this.price = this.price + carryBag;
     }
 
     public String getBill(){
         // your code goes here
 
         if(isCheeseAdded){
-            this.bill += "Extra Cheese Added: 80" + "\n";
+            this.bill += "Extra Cheese Added: " + extraCheese + "\n";
         }
         if(isToppingsAdded){
             if(isVeg){
-                this.bill += "Extra Toppings Added: 70" + "\n";
+                this.bill += "Extra Toppings Added: " + extraVegToppings + "\n";
             } else {
-                this.bill += "Extra Toppings Added: 120" + "\n";
+                this.bill += "Extra Toppings Added: " + extraNonVegToppings  + "\n";
             }
         }
         if(isBagAdded){
-            this.bill += "Paper bag Added: 20" + "\n";
+            this.bill += "Paper bag Added: " + carryBag + "\n";
         }
-
         this.bill += "Total Price: " + this.price + "\n";
         return this.bill;
     }
